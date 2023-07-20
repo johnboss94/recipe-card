@@ -1,3 +1,5 @@
+$transition-duration: 0.5s;
+
 @mixin button {
     padding: 10px;
     cursor: pointer;
@@ -8,7 +10,6 @@
 
 @mixin button-square {
     @include button;
-    max-width: 150px;
 
     background-color: lightgreen;
     color: #fff;
