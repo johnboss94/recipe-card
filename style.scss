@@ -1,0 +1,193 @@
+@import './mixins/buttons';
+
+$ral9001: #e9e0d2;
+
+html,
+body,
+div {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to left top, rgb(244, 243, 246), rgb(59, 4, 170));
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    @media screen and (min-width: 768px) {
+        align-items: center;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.mb {
+    margin-bottom: 15px;
+}
+
+.mbSmall {
+    margin-bottom: 10px;
+}
+
+.flex {
+    display: flex;
+
+    &-row {
+        flex-direction: row;
+    }
+
+    &-column {
+        flex-direction: column;
+    }
+
+    &-space-between {
+        justify-content: space-between;
+    }
+
+    &-space-around {
+        justify-content: space-around;
+    }
+
+    &-align-center {
+        align-items: center;
+    }
+}
+
+.btn {
+    @include button;
+
+    &--tag {
+        margin-top: 7px;
+        margin-right: 7px;
+    }
+
+    &--square {
+        @include button-square;
+
+        &-gray {
+            @include button-square-gray;
+        }
+
+        &-refresh {
+            @include button-square-refresh;
+
+            i {
+                transform: rotate(0deg);
+                transition: transform 0.5s ease-in-out;
+            }
+
+            &:hover {
+                i {
+                    transform: rotate(270deg);
+                    transition: transform 0.5s ease-in-out;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+#buttonShowInstructions {
+    position: relative;
+    top: 25px;
+    background-color: #fc9400;
+    border: none;
+    color: #fff;
+    word-spacing: 3px;
+}
+
+$cardHeight: 350px;
+$cardWidth: 300px;
+
+.card {
+    &-bg {
+        background-color: $ral9001;
+    }
+
+    height: auto;
+    width: $cardWidth;
+
+    @media screen and (min-width: 768px) {
+        width: 90vw;
+        height: $cardHeight;
+    }
+
+    img {
+        max-width: 100%;
+        max-height: $cardWidth;
+        object-fit: contain;
+
+        @media screen and (min-width: 768px) {
+            max-height: $cardHeight;
+        }
+    }
+
+    &-body {
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+        }
+    }
+
+    &-details {
+        flex-grow: 1;
+        padding: 15px;
+
+        @media screen and (min-width: 768px) {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        &-header {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
+
+#instructions {
+    padding: 15px;
+}
+
+#divTagsAndButtons {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 991px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+#buttonShowRecipe {
+    margin-top: 7px;
+    min-width: 100%;
+}
+
+#mealCategory,
+.btn--tag {
+    &:hover {
+        cursor: default;
+    }
+}

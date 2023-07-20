@@ -1,0 +1,36 @@
+@mixin button {
+    padding: 10px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+@mixin button-square {
+    @include button;
+    max-width: 150px;
+
+    background-color: lightgreen;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid #fff;
+}
+
+@mixin button-square-gray {
+    @include button;
+    @include button-square;
+    background-color: lightgray;
+}
+
+@mixin button-square-refresh {
+    @include button-square;
+    background-color: #1cafed;
+    transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+
+    &:hover {
+        color: #1cafed;
+        background-color: #fff;
+        border: 1px solid #1cafed;
+        transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+    }
+}

@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <link href="./style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-bg">
+            <div class="card-body">
+                <img id="mealImage" src="http://placehold.it/500/500" />
+                <div class="card-details">
+                    <div>
+                        <div class="card-details-header">
+                            <h2 class="mbSmall">Recipe: <span id='mealName'></span></h2>
+                            <button class="btn--square-refresh" onClick="getData()"><i
+                                    class='fa fa-refresh'></i></button>
+                        </div>
+                        <p class="mbSmall">
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                            <i class="fa fa-star checked"></i>
+                        </p>
+                        <button class="btn--square mbSmall" id="mealCategory"></button>
+                    </div>
+                    <div class="mbSmall">
+                        <h3>Ingredients</h3>
+                        <p id="mealIngredientsAndMeasurements"></p>
+                    </div>
+                    <div id="divTagsAndButtons">
+                        <div id="mealTags">
+
+                        </div>
+                        <div>
+                            <button class="btn--square" id="buttonShowRecipe" onClick="toggleRecipe()">Show
+                                recipe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="instructions" class="hidden">
+                <h2>Cooking instructions</h2>
+                <p id='mealInstructions'></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://use.fontawesome.com/7744fa2e4c.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
+</body>
+
+</html>
