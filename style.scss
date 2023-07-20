@@ -32,6 +32,10 @@ p {
     padding: 0;
 }
 
+h2,h3{
+    margin-bottom: 10px;
+}
+
 .hidden {
     display: none;
 }
@@ -180,9 +184,13 @@ $cardWidth: 300px;
     }
 }
 
-#buttonShowRecipe {
+#buttonShowRecipe, #mealLinkToOriginalRecipe {
     margin-top: 7px;
     min-width: 100%;
+}
+
+#mealLinkToOriginalRecipe {
+    margin: 10px auto;
 }
 
 #mealCategory,

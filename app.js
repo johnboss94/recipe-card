@@ -1,8 +1,14 @@
+var originalRecipeLink = '';
+
 const toggleRecipe = () => {
     const instructionsDiv = document.getElementById('instructions');
     instructionsDiv.classList.toggle('animate__animated');
     instructionsDiv.classList.toggle('animate__fadeInDown');
     instructionsDiv.classList.toggle('hidden');
+};
+
+const gotoOriginalRecipe = () => {
+    window.open(originalRecipeLink, '_blank');
 };
 
 const getData = async () => {
@@ -24,7 +30,7 @@ const getData = async () => {
         document.getElementById('mealCategory').innerHTML = meal.strCategory;
         document.getElementById('mealImage').src = meal.strMealThumb;
         document.getElementById('mealInstructions').innerHTML = meal.strInstructions;
-        // document.getElementById('mealLinkToOriginalRecipe').href = meal.strSource;
+        originalRecipeLink = meal.strSource;
 
         // Ik heb de ingredients en meaurements in stappen gedaan. Ik probeerde het eerst allemaal tegelijk te doen, maar dat gaf niet het gewenste resultaat. Plus, dit is veel duidelijker om te lezen, wel helaas meer code dan nodig heb ik het idee.
 
